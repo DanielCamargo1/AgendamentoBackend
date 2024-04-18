@@ -35,7 +35,7 @@ namespace BackEndPlanejadorDeViagem.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Agendamento>> PostAgenda(Agendamento agendamento)
+        public async Task<ActionResult<Agendamento>> PostAgenda(Agendamento agendamento, DateTime dataAgendamento)
         {
             if (agendamento != null)
             {
@@ -43,7 +43,9 @@ namespace BackEndPlanejadorDeViagem.Controllers
                 {
                     _contextAgenda.Agendamento.Add(agendamento);
                     await _contextAgenda.SaveChangesAsync();
+                    agendamento.HorarioAgendado = dataAgendamento;
                     return CreatedAtAction("GetAgenda", new { id = agendamento.Id }, agendamento);
+
                 }
                 catch (Exception ex)
                 {

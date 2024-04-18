@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "58nE7JkgsMogjaOchf4+qEtkjndwGDm0MtHPQV9fUA7+L13j5NDvOX9VUzsEi12exFRp8n/Gz3hYuNdlQFJ3Sw==",
+  "dgSpecHash": "0qp12EbBhkmSl6HquWuwI+kUDjyw8FYnOrwhRT0jIs+uDc45Uj1DQN7Zc/1XF0EpceDnNJkX81Nw/UC1xNgyLA==",
   "success": true,
   "projectFilePath": "C:\\Users\\danid\\source\\repos\\AgendamentoBackend\\AgendamentoBackend\\AgendamentoBackend.csproj",
   "expectedPackageFiles": [
@@ -24,6 +24,7 @@
     "C:\\Users\\danid\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\danid\\.nuget\\packages\\mysqlconnector\\2.1.2\\mysqlconnector.2.1.2.nupkg.sha512",
     "C:\\Users\\danid\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\6.0.3\\pomelo.entityframeworkcore.mysql.6.0.3.nupkg.sha512",
+    "C:\\Users\\danid\\.nuget\\packages\\questpdf\\2024.3.0\\questpdf.2024.3.0.nupkg.sha512",
     "C:\\Users\\danid\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\danid\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\danid\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
