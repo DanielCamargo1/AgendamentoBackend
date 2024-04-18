@@ -23,7 +23,7 @@ namespace BackEndPlanejadorDeViagem.Controllers
         [HttpGet]
         public async Task<ActionResult<Agendamento>> GetAgenda()
         {
-            var clients = await _contextAgenda.Agendamento.ToListAsync();
+            var clients = await _contextAgenda.Agendamento.Include(a => a.Client).Include(a => a.Servico).ToListAsync();
             return Ok(clients);
         }
         [HttpGet("{id}")]

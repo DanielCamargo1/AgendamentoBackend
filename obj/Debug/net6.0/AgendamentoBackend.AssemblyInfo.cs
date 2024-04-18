@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AgendamentoBackend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bd4d1067b69adeb9f1504d947bf3470e9503b50c")]
 [assembly: System.Reflection.AssemblyProductAttribute("AgendamentoBackend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AgendamentoBackend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
