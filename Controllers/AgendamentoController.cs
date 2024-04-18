@@ -23,6 +23,7 @@ namespace BackEndPlanejadorDeViagem.Controllers
         [HttpGet]
         public async Task<ActionResult<Agendamento>> GetAgenda()
         {
+            // -> Eager Loading
             var clients = await _contextAgenda.Agendamento.Include(a => a.Client).Include(a => a.Servico).ToListAsync();
             return Ok(clients);
         }

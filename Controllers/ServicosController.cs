@@ -66,8 +66,8 @@ namespace AgendamentoBackend.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<Service>> DeleteClients(int id)
         {
-            var selectservice = await _context.Client.FindAsync(id);
-            _context.Client.Remove(selectservice);
+            var selectservice = await _context.Servico.FindAsync(id);
+            _context.Servico.Remove(selectservice);
             _context.SaveChanges();
             return Ok(selectservice);
         }
