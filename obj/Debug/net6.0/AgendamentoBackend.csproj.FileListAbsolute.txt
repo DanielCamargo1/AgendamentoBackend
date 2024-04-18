@@ -40,3 +40,4 @@ C:\Users\danid\source\repos\AgendamentoBackend\AgendamentoBackend\obj\Debug\net6
 C:\Users\danid\source\repos\AgendamentoBackend\AgendamentoBackend\obj\Debug\net6.0\AgendamentoBackend.pdb
 C:\Users\danid\source\repos\AgendamentoBackend\AgendamentoBackend\obj\Debug\net6.0\AgendamentoBackend.genruntimeconfig.cache
 C:\Users\danid\source\repos\AgendamentoBackend\AgendamentoBackend\obj\Debug\net6.0\ref\AgendamentoBackend.dll
+C:\Users\danid\source\repos\AgendamentoBackend\AgendamentoBackend\obj\Debug\net6.0\AgendamentoBackend.sourcelink.json

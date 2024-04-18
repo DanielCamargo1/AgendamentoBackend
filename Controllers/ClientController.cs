@@ -79,7 +79,7 @@ namespace AgendamentoBackend.Controllers
             var selectClient = await _context.Client.FindAsync(id);
             _context.Client.Remove(selectClient);
             _context.SaveChanges();
-            return (selectClient);
+            return Ok(selectClient);
         }
     }
 }
