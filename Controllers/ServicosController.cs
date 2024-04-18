@@ -47,7 +47,7 @@ namespace AgendamentoBackend.Controllers
             {
                 try
                 {
-                    services.Nome = service.Nome;
+                    services.NomeService = service.NomeService;
                     services.valor = service.valor;
                     services.Duracao = service.Duracao;
                     services.Descricao = service.Descricao;

@@ -8,8 +8,6 @@ using AgendamentoBackend.Model;
 namespace BackEndPlanejadorDeViagem.Controllers
 {
 
-    //Agenda
-
     [Route("api/[controller]")]
     [ApiController]
     public class AgendamentoController : ControllerBase
@@ -19,6 +17,7 @@ namespace BackEndPlanejadorDeViagem.Controllers
         {
             _contextAgenda = context;
         }
+        public Dictionary<string, string> NomeExame = new Dictionary<string, string>();
 
         [HttpGet]
         public async Task<ActionResult<Agendamento>> GetAgenda()
@@ -44,6 +43,9 @@ namespace BackEndPlanejadorDeViagem.Controllers
                     _contextAgenda.Agendamento.Add(agendamento);
                     await _contextAgenda.SaveChangesAsync();
                     agendamento.HorarioAgendado = dataAgendamento;
+
+                    NomeExame.Add(agendamento.Client.Nome, agendamento.Servico.NomeService);
+
                     return CreatedAtAction("GetAgenda", new { id = agendamento.Id }, agendamento);
 
                 }

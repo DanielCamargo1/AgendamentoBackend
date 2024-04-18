@@ -35,6 +35,9 @@ namespace AgendamentoBackend.Migrations
                     b.Property<DateTime>("Horario")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<DateTime>("HorarioAgendado")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<int>("ServicoId")
                         .HasColumnType("int");
 
@@ -83,7 +86,7 @@ namespace AgendamentoBackend.Migrations
                     b.Property<int>("Duracao")
                         .HasColumnType("int");
 
-                    b.Property<string>("Nome")
+                    b.Property<string>("NomeService")
                         .IsRequired()
                         .HasColumnType("longtext");
 

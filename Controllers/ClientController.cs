@@ -16,6 +16,8 @@ namespace AgendamentoBackend.Controllers
             _context = context;
         }
 
+        public List<string> Nomes = new List<string>();
+
         // Cliente
         [HttpGet]
         public async Task<ActionResult<Client>> Getclient()
@@ -40,6 +42,7 @@ namespace AgendamentoBackend.Controllers
                 {
                     _context.Client.Add(client);
                     _context.SaveChanges();
+                    Nomes.Add(client.Nome);
                     return CreatedAtAction("GetClient", new { id = client.Id }, client);
 
                 }
