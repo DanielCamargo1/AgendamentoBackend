@@ -24,12 +24,21 @@ namespace BackEndPlanejadorDeViagem.Controllers
         {
             // -> Eager Loading
             var clients = await _contextAgenda.Agendamento.Include(a => a.Client).Include(a => a.Servico).ToListAsync();
+            DateTime dataDeHoje = DateTime.Today;
+            foreach(var client in clients)
+            {
+                if(client.HorarioAgendado < dataDeHoje)
+                {
+                    _contextAgenda.Remove(client);
+                }
+            }
             return Ok(clients);
         }
+
         [HttpGet("{id}")]
         public async Task<ActionResult<Agendamento>> GetAgendaForId(int id)
         {
-            var clients = await _contextAgenda.Agendamento.FindAsync(id);
+            var clients = await _contextAgenda.Agendamento.FindAsync(id);   
             return Ok(clients);
         }
 
@@ -43,11 +52,8 @@ namespace BackEndPlanejadorDeViagem.Controllers
                     _contextAgenda.Agendamento.Add(agendamento);
                     await _contextAgenda.SaveChangesAsync();
                     agendamento.HorarioAgendado = dataAgendamento;
-
                     NomeExame.Add(agendamento.Client.Nome, agendamento.Servico.NomeService);
-
                     return CreatedAtAction("GetAgenda", new { id = agendamento.Id }, agendamento);
-
                 }
                 catch (Exception ex)
                 {
