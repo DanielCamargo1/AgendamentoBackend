@@ -3,11 +3,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AgendamentoBackend.Model;
-using AgendamentoBackend.Model;
 
 namespace BackEndPlanejadorDeViagem.Controllers
 {
-
     [Route("api/[controller]")]
     [ApiController]
     public class AgendamentoController : ControllerBase
@@ -24,22 +22,29 @@ namespace BackEndPlanejadorDeViagem.Controllers
         {
             // -> Eager Loading
             var clients = await _contextAgenda.Agendamento.Include(a => a.Client).Include(a => a.Servico).ToListAsync();
-            DateTime dataDeHoje = DateTime.Today;
             foreach(var client in clients)
             {
-                if(client.HorarioAgendado < dataDeHoje)
+                if (DataInvalida(client) == null)
                 {
-                    _contextAgenda.Remove(client);
+                    return client;
                 }
             }
-            return Ok(clients);
+            return Ok(clients);    
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Agendamento>> GetAgendaForId(int id)
         {
-            var clients = await _contextAgenda.Agendamento.FindAsync(id);   
-            return Ok(clients);
+            var clients = await _contextAgenda.Agendamento.FindAsync(id);
+            if(clients != null)
+            {
+                return Ok(clients);
+
+            }
+            else
+            {
+                return BadRequest("Id não localizado");
+            }
         }
 
         [HttpPost]
@@ -99,6 +104,25 @@ namespace BackEndPlanejadorDeViagem.Controllers
             {
                 return BadRequest(ex.Message);
             }
+        }
+
+        public async Task<ActionResult<Agendamento>> DataInvalida(Agendamento client)
+        {
+            DateTime agora = DateTime.Now;
+            int diaDeHoje = agora.Day;
+            int mesAtual = agora.Month;
+            int diaAgendado = client.HorarioAgendado.Day;
+            int mesAgendado = client.HorarioAgendado.Month;
+            if (diaAgendado < diaDeHoje )
+            {
+                if(mesAgendado < mesAtual)
+                {
+                    _contextAgenda.Remove(client);
+                    await _contextAgenda.SaveChangesAsync();
+                    return client;
+                }
+            }
+            return Ok();
         }
     }
 }
