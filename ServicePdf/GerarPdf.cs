@@ -63,7 +63,7 @@ public class PDFGenerator
                             foreach (var item in nomesEExames)
                             {
                                 x.Item()
-                                    .Text(item); // Adicionando cada nome com o exame
+                                .Text(item);
                             }
                         });
                     page.Footer()
