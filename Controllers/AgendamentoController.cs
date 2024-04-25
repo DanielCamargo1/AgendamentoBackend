@@ -44,6 +44,25 @@ namespace BackEndPlanejadorDeViagem.Controllers
             return Ok(clients);
         }
 
+        [HttpGet("api/[controller]/ServicosDoDia")]
+        public async Task<ActionResult<IEnumerable<Agendamento>>> GetAgendaDoDia()
+        {
+            
+            var clients = await _contextAgenda.Agendamento
+                .Include(a => a.Client)
+                .Include(a => a.Servico)
+                .ToListAsync();
+            DateTime hoje = DateTime.Now;
+            foreach(var client in clients)
+            {
+                if(client.HorarioAgendado.Date == hoje.Date)
+                {
+                    return Ok(client);
+                }
+            }
+            return BadRequest("Não possui clientes para hoje");
+        }
+
         [HttpGet("{id}")]
         public async Task<ActionResult<Agendamento>> GetAgendaForId(int id)
         {

@@ -1,5 +1,8 @@
 ﻿using AgendamentoBackend.Data;
+using AgendamentoBackend.DTOs.Cliente;
+using AgendamentoBackend.Mapping;
 using AgendamentoBackend.Model;
+using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -11,25 +14,34 @@ namespace AgendamentoBackend.Controllers
     public class ClientController : ControllerBase
     {
         private readonly AgendaDbContext _context;
-        public ClientController(AgendaDbContext context)
+        private readonly IMapper _mapper;
+        public ClientController(AgendaDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;   
         }
 
-        public List<string> Nomes = new List<string>();
+        public List<string> Nomes = new List<string>(); // -> Esta aqui para ser usado no PDF
 
-        // Cliente
         [HttpGet]
         public async Task<ActionResult<Client>> Getclient()
         {
             var clients = await _context.Client.ToListAsync();
             return Ok(clients);
+
         }
+
         [HttpGet("{id}")]
         public async Task<ActionResult<Client>> GetclientId(int id)
         {
             var clients = await _context.Client.FindAsync(id);
-            return Ok(clients);
+            if(clients == null)
+            {
+                return BadRequest("Cliente não encontrado");
+            }
+            var clientsDto = _mapper.Map<ClientDTO>(clients);
+
+            return Ok(clientsDto);
         }
 
         [HttpPost]
@@ -49,7 +61,7 @@ namespace AgendamentoBackend.Controllers
             }
             catch 
             {
-                return BadRequest("Mensagem de erro");
+                return BadRequest("Ocorreu um erro");
             }
         }
 
