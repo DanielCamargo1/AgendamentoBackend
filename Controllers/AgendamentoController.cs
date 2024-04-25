@@ -44,7 +44,6 @@ namespace BackEndPlanejadorDeViagem.Controllers
             return Ok(clients);
         }
 
-
         [HttpGet("{id}")]
         public async Task<ActionResult<Agendamento>> GetAgendaForId(int id)
         {

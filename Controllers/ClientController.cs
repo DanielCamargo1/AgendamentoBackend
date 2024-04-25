@@ -44,13 +44,12 @@ namespace AgendamentoBackend.Controllers
                     _context.SaveChanges();
                     Nomes.Add(client.Nome);
                     return CreatedAtAction("GetClient", new { id = client.Id }, client);
-
                 }
-                return BadRequest($"Cpf Inválido, necessita-se ter 11 números digistados. vocêdigitou apenas {cpf.Count}");
+                return BadRequest($"Cpf Inválido, necessita-se ter 11 números digistados. você digitou apenas {cpf.Count} digitos");
             }
-            catch (Exception e)
+            catch 
             {
-                return StatusCode(500, "Mensagem de erro :" + e.Message);
+                return BadRequest("Mensagem de erro");
             }
         }
 

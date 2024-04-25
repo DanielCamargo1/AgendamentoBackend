@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "0qp12EbBhkmSl6HquWuwI+kUDjyw8FYnOrwhRT0jIs+uDc45Uj1DQN7Zc/1XF0EpceDnNJkX81Nw/UC1xNgyLA==",
+  "dgSpecHash": "WPWKwUckxnx14XW9ccknwV7/na/cROO70qh/mhLxfggORAXooauopOTNrfgnnK252mjIQCFuw79H4oq+1SeDvw==",
   "success": true,
   "projectFilePath": "C:\\Users\\danid\\source\\repos\\AgendamentoBackend\\AgendamentoBackend\\AgendamentoBackend.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\danid\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\danid\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\danid\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\danid\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\danid\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.29\\microsoft.entityframeworkcore.6.0.29.nupkg.sha512",
     "C:\\Users\\danid\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.29\\microsoft.entityframeworkcore.abstractions.6.0.29.nupkg.sha512",
     "C:\\Users\\danid\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.29\\microsoft.entityframeworkcore.analyzers.6.0.29.nupkg.sha512",
