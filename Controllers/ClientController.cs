@@ -37,7 +37,7 @@ namespace AgendamentoBackend.Controllers
             var clients = await _context.Client.FindAsync(id);
             if(clients == null)
             {
-                return BadRequest("Cliente não encontrado");
+                   return BadRequest("Cliente não encontrado");
             }
             var clientsDto = _mapper.Map<ClientDTO>(clients);
 

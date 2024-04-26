@@ -44,7 +44,7 @@ namespace BackEndPlanejadorDeViagem.Controllers
             return Ok(clients);
         }
 
-        [HttpGet("api/[controller]/ServicosDoDia")]
+        [HttpGet("/ServicosDoDia")]
         public async Task<ActionResult<IEnumerable<Agendamento>>> GetAgendaDoDia()
         {
             

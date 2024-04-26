@@ -2,6 +2,7 @@
 
 namespace AgendamentoBackend.Model
 {
+    [Serializable]
     public class Client
     {
         public int Id { get; set; }
@@ -12,7 +13,7 @@ namespace AgendamentoBackend.Model
         [StringLength(11)]
         public string Cpf { get; set; }
     }
-
+    [Serializable]
     public class Agendamento
     {
         public int Id { get; set; }
@@ -23,7 +24,7 @@ namespace AgendamentoBackend.Model
         public DateTime HorarioAgendado { get; set; }
         public string Descricao { get; set; }
     }
-
+    [Serializable]
     public class Service
     {
         public int Id { get; set; }

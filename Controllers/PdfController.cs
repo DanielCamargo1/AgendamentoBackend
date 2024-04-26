@@ -26,6 +26,11 @@ namespace AgendamentoBackend.Controllers
 
             return File(pdfBytes, "application/pdf", "Relatorio.pdf");
         }
+        [HttpGet("/RelatotioDoDia")]
+        public async Task<IActionResult> DownloadPdfToday()
+        {
+            return Ok();
+        }
     }
 }
 
