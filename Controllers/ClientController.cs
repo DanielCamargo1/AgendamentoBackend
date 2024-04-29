@@ -85,10 +85,14 @@ namespace AgendamentoBackend.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<Client>> DeleteClients(int id)
         {
-            var selectClient = await _context.Client.FindAsync(id);
-            _context.Client.Remove(selectClient);
-            _context.SaveChanges();
-            return Ok(selectClient);
+            var clients = await _context.Client.FindAsync(id);
+            if (clients != null)
+            {
+                _context.Client.Remove(clients);
+                _context.SaveChanges();
+                return Ok(clients);
+            }
+            else return BadRequest("cliente não encontrado");
         }
     }
 }
