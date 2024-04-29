@@ -1,6 +1,8 @@
 using AgendamentoBackend.Data;
 using Microsoft.EntityFrameworkCore;
 using AgendamentoBackend.Mapping;
+using AgendamentoBackend.Model;
+using System.Text.Json;
 
 namespace AgendamentoBackend
 {
@@ -37,6 +39,8 @@ namespace AgendamentoBackend
             app.MapControllers();
 
             app.Run();
+
+            
 
         }
     }

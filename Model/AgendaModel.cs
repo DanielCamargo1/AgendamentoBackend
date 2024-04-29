@@ -2,17 +2,7 @@
 
 namespace AgendamentoBackend.Model
 {
-    [Serializable]
-    public class Client
-    {
-        public int Id { get; set; }
-        [Required(ErrorMessage = " Digite um nome")]
-        public string Nome { get; set; }
-        public string Email { get; set; }
-        [Required(ErrorMessage = " Digite um Cpf")]
-        [StringLength(11)]
-        public string Cpf { get; set; }
-    }
+   
     [Serializable]
     public class Agendamento
     {
@@ -24,16 +14,5 @@ namespace AgendamentoBackend.Model
         public DateTime HorarioAgendado { get; set; }
         public string Descricao { get; set; }
     }
-    [Serializable]
-    public class Service
-    {
-        public int Id { get; set; }
-        [Required(ErrorMessage = " Digite um Nome Para  o serviço")]
-        public string NomeService { get; set; }
-        public string Descricao { get; set; }
-        [Required(ErrorMessage = " Informe a duração")]
-        public decimal Duracao { get; set; }
-        [Required(ErrorMessage = " Digite um Valor")]
-        public decimal valor { get; set; }
-    }
+    
 }

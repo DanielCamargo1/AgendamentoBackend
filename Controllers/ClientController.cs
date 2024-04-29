@@ -49,15 +49,10 @@ namespace AgendamentoBackend.Controllers
         {
             try
             {
-                var cpf = client.Cpf.ToList();
-                if (cpf.Count == 11)
-                {
-                    _context.Client.Add(client);
-                    _context.SaveChanges();
-                    Nomes.Add(client.Nome);
-                    return CreatedAtAction("GetClient", new { id = client.Id }, client);
-                }
-                return BadRequest($"Cpf Inválido, necessita-se ter 11 números digistados. você digitou apenas {cpf.Count} digitos");
+                _context.Client.Add(client);
+                _context.SaveChanges();
+                Nomes.Add(client.Nome);
+                return CreatedAtAction("GetClient", new { id = client.Id }, client);
             }
             catch 
             {
