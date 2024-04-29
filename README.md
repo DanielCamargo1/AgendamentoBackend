@@ -21,6 +21,11 @@ O projeto possui **3 Classes**: **Agendamento**, **Cliente** e **Serviços**. (T
 
   ![ImagemDoGEtClasseAgendamento](img/GetClient.jpg)
 
+
+   **Exemplo a Classe Serviço:**
+
+  ![ImagemDoGEtClasseAgendamento](img/GetService.jpg)
+
   
 ## Funcionalidades Principais
 
