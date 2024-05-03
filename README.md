@@ -33,12 +33,6 @@ O projeto possui **3 Classes**: **Agendamento**, **Cliente** e **Serviços**. (T
  - **Gerenciamento de Horários:** Os provedores de serviço podem definir seus horários de disponibilidade.
  - **Administração do Sistema:** Área administrativa para gerenciar usuários, serviços e horários.
 
-   
-Claro, aqui está o README com os códigos de formatação incorporados:
-
-Projeto de Backend para Agendamento de Serviços
-
-
 
 ## Tecnologias Utilizadas
 - **Linguagem de Programação:** C#
